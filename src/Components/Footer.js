@@ -1,13 +1,7 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-/* import { library } from '@fortawesome/fontawesome-svg-core'; */
-import { faInstagram } from '@fortawesome/fontawesome-svg-core';
-import {
-  MDBFooter,
-  MDBContainer,
-  MDBIcon,
-  MDBBtn
-} from 'mdb-react-ui-kit';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faFacebook, faTwitter, faGoogle, faInstagram, } from '@fortawesome/free-brands-svg-icons';
+import {MDBFooter,MDBContainer,MDBIcon,MDBBtn} from 'mdb-react-ui-kit';
 
 export default function App() {
   return (
@@ -15,26 +9,23 @@ export default function App() {
       <MDBContainer className='p-4 pb-0'>
         <section className='mb-4'>
           <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            {/* <MDBIcon fab icon={<FontAwesomeIcon icon={faInstagram} />} /> */}
+            <MDBIcon fab icon={<FontAwesomeIcon icon={faInstagram}/>} />
           </MDBBtn>
 
           <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='twitter' />
+            <MDBIcon fab icon={<FontAwesomeIcon icon={faFacebook}/>} /> 
           </MDBBtn>
 
           <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='google' />
-          </MDBBtn>
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='instagram' />
+            <MDBIcon fab icon={<FontAwesomeIcon icon={faGoogle}/>} />
           </MDBBtn>
 
           <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='linkedin-in' />
+            <MDBIcon fab icon={<FontAwesomeIcon icon={faInstagram}/>} />
           </MDBBtn>
 
           <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon='github' />
+            <MDBIcon fab icon={<FontAwesomeIcon icon={faTwitter}/>} />
           </MDBBtn>
         </section>
       </MDBContainer>

@@ -151,3 +151,13 @@
 .navbar-nav-flex-grow-1-justify-content-between {
   position: center;
 }
+
+.navbar-nav-flex-grow-1-justify-content-between {
+  margin-right: 30px;
+}
+
+.nav-link {
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+}
