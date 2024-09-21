@@ -161,3 +161,9 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+.Footer {
+  position: fixed;
+  background-color: #8e8e8e;
+
+}

@@ -1,41 +1,26 @@
 import React from 'react';
+import { MDBBtn, MDBIcon } from 'mdb-react-ui-kit';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faTwitter, faGoogle, faInstagram, } from '@fortawesome/free-brands-svg-icons';
-import {MDBFooter,MDBContainer,MDBIcon,MDBBtn} from 'mdb-react-ui-kit';
+import { faFacebook, faTwitter, faGoogle, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'; // Para íconos de redes sociales
 
 export default function App() {
   return (
-    <MDBFooter className='bg-dark text-center text-white'>
-      <MDBContainer className='p-4 pb-0'>
-        <section className='mb-4'>
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon={<FontAwesomeIcon icon={faInstagram}/>} />
-          </MDBBtn>
+    <>
+      <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#3b5998', }}>
+        <MDBIcon fab icon={<FontAwesomeIcon icon={faInstagram} />} size='lg' />
+      </MDBBtn>
 
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon={<FontAwesomeIcon icon={faFacebook}/>} /> 
-          </MDBBtn>
+      <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#55acee' }}>
+        <MDBIcon fab icon='twitter' size='lg' />
+      </MDBBtn>
 
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon={<FontAwesomeIcon icon={faGoogle}/>} />
-          </MDBBtn>
+      <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#dd4b39' }}>
+        <MDBIcon fab icon='google' size='lg' />
+      </MDBBtn>
 
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon={<FontAwesomeIcon icon={faInstagram}/>} />
-          </MDBBtn>
-
-          <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
-            <MDBIcon fab icon={<FontAwesomeIcon icon={faTwitter}/>} />
-          </MDBBtn>
-        </section>
-      </MDBContainer>
-
-      <div className='text-center p-3' style={{ backgroundColor: 'rgba(0, 0, 0, 0.2)' }}>
-        © 2020 Copyright:
-        <a className='text-white' href='https://mdbootstrap.com/'>
-          MDBootstrap.com
-        </a>
-      </div>
-    </MDBFooter>
+      <MDBBtn tag='a' color='none' className='m-1' style={{ color: '#ac2bac' }}>
+        <MDBIcon fab icon='instagram' size='lg' />
+      </MDBBtn>
+    </>
   );
 }
