@@ -157,13 +157,54 @@
 }
 
 .nav-link {
-  color: white;
+  color: rgb(251, 249, 249);
   margin-right: auto;
   margin-left: auto;
+  width: 30px;
 }
 
-.Footer {
-  position: fixed;
-  background-color: #8e8e8e;
+.custom-container {
+  position: static; 
+  padding: 60px; 
+  margin: 0;
+  background-image: url(../src/Img/fnd.jpg);
+  background-size: cover;
+  background-position: center;
 
+
+}
+
+.second-custom-class {
+  /* Estilos para pantallas pequeñas o extra pequeñas (por defecto) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* Para pantallas medianas y superiores (>= 768px) */
+@media (min-width: 768px) {
+  .custom-class {
+    width: 50% !important;
+  }
+}
+
+/* Para pantallas grandes y superiores (>= 992px) */
+@media (min-width: 992px) {
+  .custom-class {
+    padding: 3rem;
+  }
+}
+
+.custom-display {
+  font-size: calc(1.200rem + 3.5vw);
+  font-weight: 700;
+  text-align: center;
+}
+
+.custom-subtitle {
+  font-weight: 400;
+  color: #6c757d; 
+  margin-bottom: 1rem;
+  text-align: center;
 }

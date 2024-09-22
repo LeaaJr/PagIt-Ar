@@ -6,6 +6,7 @@ import Footer from "./Components/Footer";
 import './App.css';
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { /* faFacebook, faTwitter, faGoogle */ faInstagram, } from '@fortawesome/free-brands-svg-icons';
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 function App() {
   return (

@@ -48,7 +48,7 @@ function Navbar() {
                   </svg>
                 </a>
               </li>
-              <li className="nav-item">
+              <li className="nav-item" style={{justifyContent:"center"}}>
                 <a className="nav-link" href="#">
                   Home
                 </a>
@@ -68,22 +68,22 @@ function Navbar() {
         </div>
 
         {/* Barra de búsqueda y carrito */}
-        <div className="d-flex ms-auto">
+        <div className="d-flex ms-auto" style={{}}>
           {/* Barra de búsqueda */}
-          <form className="d-flex me-3">
+          <form className="d-flex me-3" style={{marginLeft:"80px"}}>
             <input
               className="form-control me-2"
               type="search"
               placeholder="Buscar productos..."
               aria-label="Search"
             />
-            <button className="btn btn-outline-light" type="submit">
+            <button className="btn btn-outline-light" type="submit" style={{marginLeft:"20px"}}>
               Buscar
             </button>
           </form>
           {/* Icono del carrito de compras */}
           <a className="nav-link position-relative" href="#">
-            <svg
+            <svg style={{marginBlock:"7x"}}
               xmlns="http://www.w3.org/2000/svg"
               width="24"
               height="24"
