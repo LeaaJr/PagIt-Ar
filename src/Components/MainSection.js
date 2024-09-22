@@ -4,8 +4,8 @@ function MainSection() {
   return (
     <div  className="custom-container">
       <div className="second-custom-container">
-        <h1 className="custom-display">Los productos que mas buscas</h1>
-        <h3 className="custom-subtitle">siempre los encontras aca !!</h3>
+        <h1 className="custom-display">Pasiones Argentinas en Italia</h1>
+        <h3 className="custom-subtitle">Productos auténticos que traen el alma de Argentina a Italia</h3>
         <div className="d-flex gap-3 justify-content-center lead fw-normal">
           <a className="icon-link" href="#">
             Comprar

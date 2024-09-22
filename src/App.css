@@ -3,6 +3,10 @@
 .container {
   max-width: 960px;
 }
+.icon-link{
+  color: white;
+  text-decoration: none;
+}
 
 .icon-link > .bi {
   width: .75em;
@@ -157,7 +161,8 @@
 }
 
 .nav-link {
-  color: rgb(251, 249, 249);
+  color: rgb(244, 238, 238);
+  cursor: pointer;
   margin-right: auto;
   margin-left: auto;
   width: 30px;
@@ -165,7 +170,7 @@
 
 .custom-container {
   position: static; 
-  padding: 60px; 
+  padding: 160px; 
   margin: 0;
   background-image: url(../src/Img/fnd.jpg);
   background-size: cover;
@@ -204,7 +209,49 @@
 
 .custom-subtitle {
   font-weight: 400;
-  color: #6c757d; 
+  color: #151616; 
   margin-bottom: 1rem;
   text-align: center;
 }
+
+/* MAIN */
+
+.main-custom-class {
+  width: 100%; /* w-100 */
+  margin-top: 4rem;
+  margin-bottom: 4rem; 
+  padding-left: 1rem; 
+}
+
+/* Para pantallas medianas y superiores (>= 768px) */
+@media (min-width: 768px) {
+  .custom-class {
+    display: flex; /* d-md-flex */
+  }
+  
+  .custom-class > * {
+    flex: 1; /* flex-md-equal */
+  }
+}
+
+.custom-inner-class {
+  background-color: #212529; /* Fondo oscuro */
+  color: #ffffff; /* Texto blanco */
+  padding-top: 1rem; /* pt-3 */
+  padding-left: 1rem; /* px-3 */
+  padding-right: 1rem; /* px-3 */
+  text-align: center; /* text-center */
+  overflow: hidden; /* overflow-hidden */
+}
+
+/* Para pantallas medianas y superiores (>= 768px) */
+@media (min-width: 768px) {
+  .custom-inner-class {
+    margin-right: 1rem; /* me-md-3 */
+    padding-top: 3rem; /* pt-md-5 */
+    padding-left: 3rem; /* px-md-5 */
+    padding-right: 3rem; /* px-md-5 */
+  }
+}
+
+

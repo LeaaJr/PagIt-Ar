@@ -2,8 +2,8 @@ import React from "react";
 
 function ProductSection() {
   return (
-    <div className="d-md-flex flex-md-equal w-100 my-md-3 ps-md-3">
-      <div className="text-bg-dark me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+    <div className="main-custom-class">
+      <div className="custom-inner-class">
         <div className="my-3 py-3">
           <h2 className="display-5">Producto1</h2>
           <p className="lead">subtitulo de producto</p>
