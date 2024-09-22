@@ -2,7 +2,9 @@ import React from "react";
 
 function Navbar() {
   return (
-    <nav className="navbar navbar-expand-md bg-dark sticky-top border-bottom">
+
+    <header className="cabezheader">
+    <nav className="navbar navbar-expand-md sticky-top">
       <div className="container">
         {/* Logo y Nombre de la Marca */}
         <a className="navbar-brand d-md-none" href="#">
@@ -49,17 +51,17 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item" style={{justifyContent:"center"}}>
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="#" style={{color: "black"}}>
                   Home
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="#" style={{color: "black"}}>
                   Productos
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link" href="#">
+                <a className="nav-link" href="#" style={{color: "black"}}>
                   Nosotros
                 </a>
               </li>
@@ -68,7 +70,7 @@ function Navbar() {
         </div>
 
         {/* Barra de búsqueda y carrito */}
-        <div className="d-flex ms-auto" style={{}}>
+        <div className="d-flex ms-auto">
           {/* Barra de búsqueda */}
           <form className="d-flex me-3" style={{marginLeft:"80px"}}>
             <input
@@ -77,7 +79,7 @@ function Navbar() {
               placeholder="Buscar productos..."
               aria-label="Search"
             />
-            <button className="btn btn-outline-light" type="submit" style={{marginLeft:"20px"}}>
+            <button className="btn btn-outline-light" type="submit" style={{marginLeft:"20px", backgroundColor:"black", color:"withe"}}>
               Buscar
             </button>
           </form>
@@ -101,8 +103,10 @@ function Navbar() {
         </div>
       </div>
     </nav>
+  </header>
   );
 }
+
 
 export default Navbar;
 

@@ -17,6 +17,12 @@
  * Custom translucent site header
  */
 
+ .cabezheader{
+    position: absolute !important;
+    width: 100%;
+    background-color: transparent;
+ }
+
 .site-header {
   background-color: rgba(0, 0, 0, .85);
   -webkit-backdrop-filter: saturate(180%) blur(20px);
@@ -131,6 +137,10 @@
   -webkit-overflow-scrolling: touch;
 }
 
+.search{
+  color: #8e8e8e;
+}
+
 .btn-bd-primary {
   --bd-violet-bg: #712cf9;
   --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
@@ -235,14 +245,59 @@
 }
 
 .custom-inner-class {
-  background-color: #212529; /* Fondo oscuro */
   color: #ffffff; /* Texto blanco */
   padding-top: 1rem; /* pt-3 */
   padding-left: 1rem; /* px-3 */
   padding-right: 1rem; /* px-3 */
   text-align: center; /* text-center */
   overflow: hidden; /* overflow-hidden */
+  background-image: url(../src/Img/mates-background.jpg);
+  background-size: cover;
+  background-position: center;
 }
+
+.custom-inner-classtwo {
+  color: #ffffff; /* Texto blanco */
+  padding-top: 1rem; /* pt-3 */
+  padding-left: 1rem; /* px-3 */
+  padding-right: 1rem; /* px-3 */
+  text-align: center; /* text-center */
+  overflow: hidden; /* overflow-hidden */
+  background-image: url(../src/Img/dulce-de-leche.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) {
+  .custom-inner-classtwo {
+      margin-right: 1rem;
+      padding-top: 3rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
+  }
+}
+
+.custom-inner-classthree {
+  color: #ffffff; /* Texto blanco */
+  padding-top: 1rem; /* pt-3 */
+  padding-left: 1rem; /* px-3 */
+  padding-right: 1rem; /* px-3 */
+  text-align: center; /* text-center */
+  overflow: hidden; /* overflow-hidden */
+  background-image: url(../src/Img/alfajor-argentino-three.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 768px) {
+  .custom-inner-classthree {
+      margin-right: 1rem;
+      padding-top: 3rem;
+      padding-left: 3rem;
+      padding-right: 3rem;
+  }
+}
+
 
 /* Para pantallas medianas y superiores (>= 768px) */
 @media (min-width: 768px) {

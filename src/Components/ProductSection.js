@@ -13,7 +13,7 @@ function ProductSection() {
           style={{ width: "80%", height: "300px", borderRadius: "21px 21px 0 0" }}
         ></div>
       </div>
-      <div className="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div className="custom-inner-classtwo">
         <div className="my-3 p-3">
           <h2 className="display-5">Producto2</h2>
           <p className="lead">subtitulo de producto</p>
@@ -23,7 +23,7 @@ function ProductSection() {
           style={{ width: "80%", height: "300px", borderRadius: "21px 21px 0 0" }}
         ></div>
       </div>
-      <div className="bg-body-tertiary me-md-3 pt-3 px-3 pt-md-5 px-md-5 text-center overflow-hidden">
+      <div className="custom-inner-classthree">
         <div className="my-3 p-3">
           <h2 className="display-5">Producto2</h2>
           <p className="lead">subtitulo de producto</p>
