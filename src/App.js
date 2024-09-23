@@ -7,13 +7,13 @@ import './App.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import { Routes, Route } from "react-router-dom";
 import Productos from './pages/Productos';
+import Blog from "./pages/Blog";
 
 function App() {
   return (
     <div>
       <Navbar />
       <Routes>
-        {/* Ruta para la página principal (puedes ajustarla según lo que necesites) */}
         <Route path="/" element={
           <main>
             <MainSection />
@@ -23,6 +23,7 @@ function App() {
         
         {/* Ruta para la página de productos */}
         <Route path="/productos" element={<Productos />} />
+        <Route path="/blog" element={<Blog />} />
       </Routes>   
       <Footer />
     </div>
