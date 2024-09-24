@@ -52,17 +52,17 @@ function Navbar() {
                 </a>
               </li>
               <li className="nav-item" style={{justifyContent:"center"}}>
-              <Link to="/"> <a className="nav-link" href="#" style={{color: "black"}}>
+              <Link to="/" className="linkredirect"> <a className="nav-link" href="#" style={{color: "black"}}>
                   Home
                 </a> </Link>
               </li>
               <li className="nav-item">
-              <Link to="/productos">< a className="nav-link" href="#" style={{color: "black"}}>
+              <Link to="/productos" className="linkredirect">< a className="nav-link" href="#" style={{color: "black"}}>
                   Productos
                 </a> </Link>
               </li>
               <li className="nav-item">
-              <Link to="/blog"> <a className="nav-link" href="#" style={{color: "black"}}>
+              <Link to="/blog" className="linkredirect"> <a className="nav-link" href="#" style={{color: "black"}}>
                   Nosotros 
                 </a> </Link>
               </li>

@@ -178,6 +178,11 @@
   width: 30px;
 }
 
+.linkredirect{
+  text-decoration: none;
+}
+
+
 .custom-container {
   position: static; 
   padding: 160px; 
