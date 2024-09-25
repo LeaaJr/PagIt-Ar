@@ -5,7 +5,6 @@ import '../Cards.css';
 const CardDeck = () => {
   const [productos, setProductos] = useState([]);
 
-  
   useEffect(() => {
     axios.get('http://localhost:5500/productos')
       .then(response => {
@@ -26,9 +25,6 @@ const CardDeck = () => {
       </div>
 
       <div className="card-deck">
-
-        {/* Renderiza las tarjetas para cada producto */}
-
         {productos.length === 0 ? (
           <p>No hay productos disponibles en este momento.</p>
         ) : (
@@ -37,14 +33,14 @@ const CardDeck = () => {
               <img
                 className="card-img-top"
                 src={`https://picsum.photos/300/200?random=${producto.id}`} // Imágenes de prueba
-                alt={producto.nombre}
+                alt={producto.name} // Asegúrate de usar el nombre correcto
               />
               <div className="card-body">
-                <h5 className="card-title">{producto.nombre}</h5>
-                <p className="card-text">{producto.descripcion}</p>
-                <p className="card-text">Precio: ${producto.precio}</p>
+                <h5 className="card-title">{producto.name}</h5> {/* Nombre del producto */}
+                <p className="card-text">{producto.description}</p> {/* Descripción del producto */}
+                <p className="card-text">Precio: ${producto.price}</p> {/* Precio del producto */}
                 <p className="card-text">
-                  <small className="text-muted">Stock: {producto.stock}</small>
+                  <small className="text-muted">Stock: {producto.stock}</small> {/* Stock del producto */}
                 </p>
               </div>
             </div>
@@ -55,4 +51,4 @@ const CardDeck = () => {
   );
 };
 
-export default CardDeck;
+export default CardDeck
