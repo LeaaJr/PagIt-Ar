@@ -14,7 +14,6 @@ function Navbar() {
           </svg>
           Aperture
         </a>
-        {/* Botón de toggle para el offcanvas en dispositivos pequeños */}
         <button
           className="navbar-toggler"
           type="button"
