@@ -1,7 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import '../Cards.css';
 
 const CardDeck = () => {
+  const [productos, setProductos] = useState([]);
+
+  
+  useEffect(() => {
+    axios.get('http://localhost:5500/productos')
+      .then(response => {
+        setProductos(response.data);
+      })
+      .catch(error => {
+        console.error('Error al obtener los productos:', error);
+      });
+  }, []);
+
   return (
     <>
       <div className="custom-container-card">
@@ -12,124 +26,33 @@ const CardDeck = () => {
       </div>
 
       <div className="card-deck">
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This card has supporting text below as a natural lead-in to additional content.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-      </div>
 
-      <div className="card-deck">
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This card has supporting text below as a natural lead-in to additional content.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-      </div>
+        {/* Renderiza las tarjetas para cada producto */}
 
-      <div className="card-deck">
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This card has supporting text below as a natural lead-in to additional content.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
-        <div className="card">
-          <img className="card-img-top" src="..." alt="Card image cap" />
-          <div className="card-body">
-            <h5 className="card-title">Card title</h5>
-            <p className="card-text">
-              This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.
-            </p>
-            <p className="card-text">
-              <small className="text-muted">Last updated 3 mins ago</small>
-            </p>
-          </div>
-        </div>
+        {productos.length === 0 ? (
+          <p>No hay productos disponibles en este momento.</p>
+        ) : (
+          productos.map((producto) => (
+            <div className="card" key={producto.id}>
+              <img
+                className="card-img-top"
+                src={`https://picsum.photos/300/200?random=${producto.id}`} // Imágenes de prueba
+                alt={producto.nombre}
+              />
+              <div className="card-body">
+                <h5 className="card-title">{producto.nombre}</h5>
+                <p className="card-text">{producto.descripcion}</p>
+                <p className="card-text">Precio: ${producto.precio}</p>
+                <p className="card-text">
+                  <small className="text-muted">Stock: {producto.stock}</small>
+                </p>
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </>
   );
 };
 
 export default CardDeck;
-
