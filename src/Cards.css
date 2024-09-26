@@ -61,58 +61,105 @@
 /* CARDS */
 
 .card-deck {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin: 20px 0;
-  }
-  
+  display: flex;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan */
+  justify-content: space-between;
+  margin: 40px;
+  padding: 3rem;
+  gap: 60px; /* Espaciado entre tarjetas */
+}
+
+.card {
+  flex: 1 1 calc(25% - 40px);
+  max-width: calc(25% - 40px);
+  margin: 0;
+  border: 2px solid #000; /* Contorno negro más visible */
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Sombra más notoria */
+  transition: transform 0.2s, box-shadow 0.2s; /* Transición suave en la sombra y el transform */
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más grande en el hover */
+}
+
+.card-body {
+  background-color: #ddd;
+  padding: 1rem; /* Espacio interno para separar el contenido de los bordes */
+  border-top: 1px solid #000; /* Línea de separación entre la imagen y el cuerpo */
+}
+
+
+.card-img-top {
+  width: 100%;
+  height: auto;
+  max-height: 120px;
+  border-bottom: 1px solid #ddd;
+}
+
+@media (max-width: 992px) {
   .card {
-    flex: 1;
-    margin: 10px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    flex: 1 1 calc(50% - 40px); /* 2 tarjetas por fila en pantallas medianas */
+    max-width: calc(50% - 40px);
   }
-  
-  .card:hover {
-    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .card-deck {
+    flex-direction: column;
   }
-  
-  .card-img-top {
-    width: 100%;
-    height: auto;
-    border-bottom: 1px solid #ddd;
+  .card {
+    flex: 1 1 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+    max-width: 100%;
   }
-  
-  .card-body {
-    padding: 15px;
-  }
-  
-  .card-title {
-    font-size: 1.25rem;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  .card-text {
-    font-size: 1rem;
-    margin-bottom: 15px;
-  }
-  
-  .card-text small {
-    color: #6c757d;
-  }
-  
-  .text-muted {
-    color: #6c757d;
-  }
-  
-  @media (max-width: 768px) {
-    .card-deck {
-      flex-direction: column;
-    }
-  }
-  
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.quantity-control {
+  display: flex;
+  align-items: center;
+}
+
+.quantity-control button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  margin: 0 5px;
+  transition: background-color 0.3s;
+}
+
+.quantity-control button:hover {
+  background-color: #0056b3;
+}
+
+.quantity-control span {
+  display: inline-block;
+  width: 40px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.add-to-cart {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #218838;
+}
