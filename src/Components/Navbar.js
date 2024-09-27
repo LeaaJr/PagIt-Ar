@@ -1,5 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { MDBIcon } from 'mdb-react-ui-kit';
 
 function Navbar({ carrito }) {
   const navigate = useNavigate();
@@ -106,16 +107,10 @@ function Navbar({ carrito }) {
               onClick={irAFinalizarCompra}
               style={{ border: "none", background: "none", cursor: "pointer" }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="24"
-                height="24"
-                fill="currentColor"
-                className="bi bi-cart"
-                viewBox="0 0 16 16"
-              >
+                <i className="bi bi-cart">
+                <MDBIcon fas icon="shopping-cart" />
+                </i>
                 <path d="M0 1a1 0 0 1 1-1h1.5a.5.5 0 0 1 .485.379L3.89 4H14.5a.5.5 0 0 1 .49.598l-1.5 8A.5.5 0 0 1 13 13H4a.5.5 0 0 1-.49-.402L1.01 1H1zm2.2 4l1.22 6h8.3l1.2-6H2.2zM5 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm9 0a2 2 0 1 1-4 0 2 2 0 0 1 4 0z" />
-              </svg>
               <span className="badge bg-danger position-absolute top-0 start-100 translate-middle">
                 {calcularTotalProductos()}
               </span>

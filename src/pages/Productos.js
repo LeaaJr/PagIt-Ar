@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import '../Cards.css';
+import { toast } from 'react-toastify'; // Importa la función `toast` de `react-toastify`
+import '../Estilos/Cards.css';
 
-const CardDeck = () => {
+const CardDeck = ({ agregarAlCarrito }) => {
   const [productos, setProductos] = useState([]);
   const [cantidad, setCantidad] = useState({});
-  const [carrito, setCarrito] = useState([]);
 
   useEffect(() => {
     axios.get('http://localhost:5500/productos')
       .then(response => {
-        console.log('Datos recibidos:', response.data); // Agrega este log
+        console.log('Datos recibidos:', response.data);
         setProductos(response.data);
       })
       .catch(error => {
@@ -18,7 +18,6 @@ const CardDeck = () => {
       });
   }, []);
 
-  // Función para aumentar la cantidad del producto
   const aumentarCantidad = (id) => {
     setCantidad((prevCantidad) => ({
       ...prevCantidad,
@@ -26,7 +25,6 @@ const CardDeck = () => {
     }));
   };
 
-  // Función para disminuir la cantidad del producto
   const disminuirCantidad = (id) => {
     setCantidad((prevCantidad) => ({
       ...prevCantidad,
@@ -34,20 +32,22 @@ const CardDeck = () => {
     }));
   };
 
-  // Función para agregar el producto al carrito
-  const agregarAlCarrito = (producto) => {
+  const manejarAgregarAlCarrito = (producto) => {
     const cantidadProducto = cantidad[producto.id] || 1;
-    setCarrito((prevCarrito) => {
-      const productoExistente = prevCarrito.find((item) => item.id === producto.id);
-      if (productoExistente) {
-        return prevCarrito.map((item) =>
-          item.id === producto.id ? { ...item, cantidad: item.cantidad + cantidadProducto } : item
-        );
-      } else {
-        return [...prevCarrito, { ...producto, cantidad: cantidadProducto }];
-      }
+    agregarAlCarrito({ ...producto, cantidad: cantidadProducto });
+    setCantidad((prevCantidad) => ({ ...prevCantidad, [producto.id]: 0 }));
+
+    // Mostrar la notificación de producto agregado
+
+    toast.success(`El producto "${producto.name}" se ha agregado al carrito.`, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
     });
-    setCantidad((prevCantidad) => ({ ...prevCantidad, [producto.id]: 0 })); // Resetea el contador
   };
 
   return (
@@ -85,7 +85,7 @@ const CardDeck = () => {
                     <span>{cantidad[producto.id] || 0}</span>
                     <button onClick={() => aumentarCantidad(producto.id)}>+</button>
                   </div>
-                  <button className="add-to-cart" onClick={() => agregarAlCarrito(producto)}>
+                  <button className="add-to-cart" onClick={() => manejarAgregarAlCarrito(producto)}>
                     🛒 Agregar al carrito
                   </button>
                 </div>
@@ -94,25 +94,11 @@ const CardDeck = () => {
           ))
         )}
       </div>
-
-      {/* Sección para mostrar el carrito de compras */}
-      <div className="carrito-compras">
-        <h2>Carrito de Compras</h2>
-        {carrito.length === 0 ? (
-          <p>Tu carrito está vacío.</p>
-        ) : (
-          <ul>
-            {carrito.map((item) => (
-              <li key={item.id}>
-                {item.name} - Cantidad: {item.cantidad} - Precio: ${item.price * item.cantidad}
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
     </>
   );
 };
 
 export default CardDeck;
+
+
 
