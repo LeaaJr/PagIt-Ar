@@ -21,7 +21,7 @@ function Navbar({ carrito }) {
       <nav className="navbar">
         <div className="navbar-container">
           <Link to="/" className="navbar-brand">
-            Aperture
+            ArgIta
           </Link>
 
           {/* Menú de navegación */}

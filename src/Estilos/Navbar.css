@@ -100,6 +100,7 @@
     position: relative;
     font-size: 24px;
     cursor: pointer;
+    margin-right: 1rem;
   }
   
   .carrito-boton:hover .carrito-badge {
