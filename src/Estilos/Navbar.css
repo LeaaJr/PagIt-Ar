@@ -1,0 +1,119 @@
+/* Navbar.css */
+
+/* Estilos Generales */
+.header {
+    position: fixed; /* Navbar fijo */
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar-container {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Estilo de la Marca */
+  .navbar-brand {
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  /* Menú del Navbar */
+  .navbar-menu {
+    flex-grow: 1;
+    display: flex; /* Asegura que el contenedor del menú sea flexible */
+    justify-content: center; /* Centra el menú en el navbar */
+    align-items: center; /* Alinea los elementos en el centro verticalmente */
+  }
+  
+  .navbar-nav {
+    list-style: none;
+    display: flex; /* Los elementos hijos se alinearán en fila horizontal */
+    padding: 0;
+    margin: 0;
+    align-items: center; /* Alineación vertical de los elementos del menú */
+  }
+  
+  .nav-item {
+    margin: 0 65px; /* Espacio horizontal entre los elementos */
+  }
+  
+  .nav-link {
+    font-size: 18px;
+    color: #000;
+    text-decoration: none;
+  }
+  
+  .nav-link:hover {
+    color: #007bff;
+  }
+  
+  /* Acciones del Navbar */
+  .navbar-actions {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-search {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-input {
+    padding: 5px 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-right: 10px;
+  }
+  
+  .search-button {
+    padding: 5px 15px;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .search-button:hover {
+    background-color: #333;
+  }
+  
+  /* Botón de Carrito */
+  .carrito-boton {
+    background: none;
+    border: none;
+    position: relative;
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .carrito-boton:hover .carrito-badge {
+    background-color: #ff4c4c;
+  }
+  
+  .carrito-badge {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: #dc3545;
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 6px;
+    border-radius: 50%;
+  }
+  

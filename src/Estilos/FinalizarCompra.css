@@ -1,0 +1,96 @@
+  /* Contenedor principal */
+  .finalizar-compra-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f7f9fc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding-top: 7rem;
+  }
+  
+  .finalizar-compra-header {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    margin-bottom: 40px;
+    color: #343a40;
+  }
+  
+  .finalizar-compra-table {
+    margin-bottom: 40px;
+    border-collapse: separate;
+    border-spacing: 0 15px;
+    width: 100%;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .finalizar-compra-table thead th {
+    background: #495057;
+    color: #ffffff;
+    padding: 15px;
+  }
+  
+  .finalizar-compra-table tbody tr {
+    background: #ffffff;
+    border: 1px solid #dee2e6;
+    transition: all 0.3s ease;
+  }
+  
+  .finalizar-compra-table tbody tr:hover {
+    background: #f1f3f5;
+  }
+  
+  .finalizar-compra-table td {
+    padding: 15px;
+    vertical-align: middle;
+    text-align: center;
+  }
+  
+  .finalizar-compra-btn {
+    font-size: 14px;
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .finalizar-compra-btn-outline-primary {
+    border: 1px solid #1d72b8;
+    color: #1d72b8;
+  }
+  
+  .finalizar-compra-btn-outline-primary:hover {
+    background: #1d72b8;
+    color: #ffffff;
+  }
+  
+  .finalizar-compra-btn-danger {
+    background: #e3342f;
+    border: none;
+  }
+  
+  .finalizar-compra-btn-danger:hover {
+    background: #cc1f1a;
+  }
+  
+  .finalizar-compra-btn-success, .finalizar-compra-btn-primary {
+    background: #38c172;
+    border: none;
+  }
+  
+  .finalizar-compra-btn-success:hover, .finalizar-compra-btn-primary:hover {
+    background: #2b8a3e;
+  }
+  
+  .finalizar-compra-total {
+    background: #f1f3f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .finalizar-compra-total h3 {
+    color: #343a40;
+    font-size: 24px;
+  }
+  
+  .finalizar-compra-total button {
+    margin-top: 20px;
+  }
