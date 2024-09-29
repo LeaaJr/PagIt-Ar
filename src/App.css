@@ -2,15 +2,15 @@
 
 /* Estilos específicos para el menú de navegación */
 .navbar-menu {
-  display: flex; /* Asegura que el contenedor del menú esté en fila */
-  justify-content: center; /* Centra los elementos horizontalmente */
-  align-items: center; /* Centra los elementos verticalmente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px; /* Espacio entre los elementos */
 }
 
 .navbar-nav {
-  display: flex; /* Asegura que los elementos hijos estén en fila */
-  flex-direction: row; /* Asegura que los elementos hijos estén alineados en fila */
+  display: flex; /* Los elementos hijos se alinean en fila */
+  flex-direction: row; /* Asegura que los elementos estén alineados en fila */
   justify-content: center; /* Centra los elementos horizontalmente */
   align-items: center; /* Centra los elementos verticalmente */
   list-style: none; /* Remueve el estilo de lista */
@@ -30,6 +30,49 @@
 
 .nav-link:hover {
   color: #007bff; /* Cambiar color del link al pasar el cursor */
+}
+
+/* Estilos adicionales para el navbar */
+.custom-navbar .navbar-toggler {
+  border: none;
+  background: transparent;
+}
+
+.custom-navbar .navbar-toggler-icon {
+  color: black; /* Color del ícono de hamburguesa */
+}
+
+/* Estilos para dispositivos pequeños */
+@media (max-width: 768px) {
+  .navbar-nav {
+    flex-direction: column; /* Hace que los links se apilen verticalmente */
+    gap: 10px; /* Espaciado entre cada link */
+  }
+
+  .nav-item {
+    margin: 10px 0; /* Espacio vertical entre elementos */
+  }
+
+  .navbar-nav .nav-link {
+    padding: 10px 0; /* Espaciado adicional */
+    font-size: 1rem; /* Ajusta el tamaño de fuente */
+  }
+}
+
+/* Estilos para dispositivos muy pequeños */
+@media (max-width: 576px) {
+  .navbar-menu {
+    flex-direction: column; /* Cambia a columna en dispositivos pequeños */
+    gap: 15px; /* Espacio adicional entre los elementos */
+  }
+
+  .nav-item {
+    margin: 5px 0; /* Reduce el margen vertical entre elementos */
+  }
+
+  .nav-link {
+    font-size: 0.9rem; /* Tamaño de fuente más pequeño */
+  }
 }
 
 /* container */

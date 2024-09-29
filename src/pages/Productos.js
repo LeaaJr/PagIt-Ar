@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { toast } from 'react-toastify'; // Importa la función `toast` de `react-toastify`
+import { toast } from 'react-toastify';
 import '../Estilos/Cards.css';
 
 const CardDeck = ({ agregarAlCarrito }) => {
   const [productos, setProductos] = useState([]);
   const [cantidad, setCantidad] = useState({});
+  const [filtro, setFiltro] = useState(""); // Nueva variable de estado para el filtro
 
   useEffect(() => {
     axios.get('http://localhost:5500/productos')
       .then(response => {
-        console.log('Datos recibidos:', response.data);
         setProductos(response.data);
       })
       .catch(error => {
@@ -37,8 +37,6 @@ const CardDeck = ({ agregarAlCarrito }) => {
     agregarAlCarrito({ ...producto, cantidad: cantidadProducto });
     setCantidad((prevCantidad) => ({ ...prevCantidad, [producto.id]: 0 }));
 
-    // Mostrar la notificación de producto agregado
-
     toast.success(`El producto "${producto.name}" se ha agregado al carrito.`, {
       position: "top-right",
       autoClose: 3000,
@@ -50,6 +48,11 @@ const CardDeck = ({ agregarAlCarrito }) => {
     });
   };
 
+  // Función para filtrar productos en base al texto ingresado en la barra de búsqueda
+  const productosFiltrados = productos.filter((producto) =>
+    producto.name.toLowerCase().includes(filtro.toLowerCase())
+  );
+
   return (
     <>
       <div className="custom-container-card">
@@ -59,11 +62,22 @@ const CardDeck = ({ agregarAlCarrito }) => {
         </div>
       </div>
 
+      {/* Barra de búsqueda en la parte superior derecha */}
+      <div className="search-container">
+        <input
+          type="text"
+          className="form-control search-bar"
+          placeholder="Buscar productos..."
+          value={filtro}
+          onChange={(e) => setFiltro(e.target.value)}
+        />
+      </div>
+
       <div className="card-deck">
-        {productos.length === 0 ? (
+        {productosFiltrados.length === 0 ? (
           <p>No hay productos disponibles en este momento.</p>
         ) : (
-          productos.map((producto) => (
+          productosFiltrados.map((producto) => (
             <div className="card" key={producto.id}>
               <img
                 className="card-img-top"
@@ -99,6 +113,7 @@ const CardDeck = ({ agregarAlCarrito }) => {
 };
 
 export default CardDeck;
+
 
 
 
