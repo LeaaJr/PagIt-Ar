@@ -1,31 +1,49 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { MDBIcon } from 'mdb-react-ui-kit';
-import "../Estilos/Navbar.css"; // Importa tus estilos aquí, o el CSS que uses
+import "../Estilos/Navbar.css"; // Importa tus estilos aquí
 
 function Navbar({ carrito }) {
   const navigate = useNavigate();
 
-  // Función para calcular la cantidad total de productos en el carrito
+  // Calcular la cantidad total de productos en el carrito
   const calcularTotalProductos = () => {
     return carrito.reduce((total, producto) => total + (producto.cantidad || 1), 0);
   };
 
+  // Función para manejar la navegación a la página de finalizar compra
   const irAFinalizarCompra = () => {
     navigate("/finalizar-compra");
   };
 
+  // Efecto para cambiar el fondo del navbar cuando se hace scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const navbar = document.querySelector('.navbar');
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <header className="cabezheader">
-      <nav className="navbar navbar-expand-md sticky-top custom-navbar">
-        <div className="container">
+    <header>
+      <nav className="navbar navbar-expand-lg custom-navbar">
+        <div className="container navbar-container">
           {/* Brand del navbar */}
-          <a className="navbar-brand" href="#">
+          <Link to="/" className="navbar-brand">
             <svg className="bi" width="24" height="24">
               <use xlinkHref="#aperture" />
             </svg>
             Aperture
-          </a>
+          </Link>
 
           {/* Botón de hamburguesa para menú desplegable en dispositivos pequeños */}
           <button
@@ -41,42 +59,35 @@ function Navbar({ carrito }) {
           </button>
 
           {/* Contenedor colapsable del menú */}
-          <div className="collapse navbar-collapse" id="navbarNav">
+          <div className="collapse navbar-collapse navbar-menu" id="navbarNav">
             <ul className="navbar-nav ms-auto">
               <li className="nav-item">
-                <Link to="/" className="linkredirect">
-                  <a className="nav-link" href="#" style={{ color: "black" }}>
-                    Home
-                  </a>
+                <Link to="/" className="nav-link" style={{ color: "black" }}>
+                  Home
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/productos" className="linkredirect">
-                  <a className="nav-link" href="#" style={{ color: "black" }}>
-                    Productos
-                  </a>
+                <Link to="/productos" className="nav-link" style={{ color: "black" }}>
+                  Productos
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/blog" className="linkredirect">
-                  <a className="nav-link" href="#" style={{ color: "black" }}>
-                    Nosotros
-                  </a>
+                <Link to="/nosotros" className="nav-link" style={{ color: "black" }}>
+                  Nosotros
                 </Link>
               </li>
             </ul>
           </div>
 
-          {/* Botón de carrito y buscador */}
-          <div className="d-flex align-items-center ms-auto">
-            {/* Botón de carrito */}
+          {/* Botón de carrito */}
+          <div className="navbar-actions d-flex align-items-center">
             <button
-              className="nav-link position-relative carrito-boton"
+              className="position-relative carrito-boton"
               onClick={irAFinalizarCompra}
               style={{ border: "none", background: "none", cursor: "pointer" }}
             >
               <MDBIcon fas icon="shopping-cart" />
-              <span className="badge bg-danger position-absolute top-0 start-100 translate-middle">
+              <span className="carrito-badge bg-danger position-absolute top-0 start-100 translate-middle" style={{paddingRight:"0,1rem"}}>
                 {calcularTotalProductos()}
               </span>
             </button>

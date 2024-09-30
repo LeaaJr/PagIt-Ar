@@ -1,119 +1,129 @@
-/* Navbar.css */
+/* Importar Bootstrap */
+@import '~bootstrap/dist/css/bootstrap.min.css';
 
 /* Estilos Generales */
-.header {
-    position: fixed; /* Navbar fijo */
-    top: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: transparent;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-  }
-  
-  .navbar-container {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Estilo de la Marca */
-  .navbar-brand {
-    font-size: 24px;
-    font-weight: bold;
-    color: #000;
-    text-decoration: none;
-  }
-  
-  /* Menú del Navbar */
-  .navbar-menu {
-    flex-grow: 1;
-    display: flex; /* Asegura que el contenedor del menú sea flexible */
-    justify-content: center; /* Centra el menú en el navbar */
-    align-items: center; /* Alinea los elementos en el centro verticalmente */
-  }
-  
+.navbar {
+  position: fixed; /* Fija el navbar en la parte superior */
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: transparent; /* Fondo transparente */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+  transition: background-color 0.3s ease; /* Transición suave al cambiar el fondo */
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.9); /* Fondo semitransparente al hacer scroll */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añadir sombra al hacer scroll */
+}
+
+/* Estilo del contenedor principal del navbar */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+/* Estilo de la Marca */
+.navbar-brand {
+  font-size: 24px;
+  font-weight: bold;
+  color: #000;
+  text-decoration: none;
+}
+
+/* Menú del Navbar */
+.navbar-menu {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center; /* Centrar el menú */
+  align-items: center; /* Alineación vertical */
+}
+
+.navbar-nav {
+  list-style: none;
+  display: flex; /* Elementos en fila horizontal */
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0 40px; /* Espacio horizontal */
+}
+
+.nav-link {
+  font-size: 18px;
+  color: #000;
+  text-decoration: none;
+}
+
+.nav-link:hover {
+  color: #007bff;
+}
+
+/* Acciones del Navbar (Ej: Carrito) */
+.navbar-actions {
+  display: flex;
+  align-items: center;
+}
+
+.carrito-boton {
+  background: none;
+  border: none;
+  position: relative;
+  font-size: 24px;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+.carrito-boton:hover .carrito-badge {
+  background-color: #ff4c4c;
+}
+
+.carrito-badge {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background-color: #dc3545;
+  color: #fff;
+  font-size: 12px;
+  padding: 3px 6px;
+  border-radius: 50%;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
   .navbar-nav {
-    list-style: none;
-    display: flex; /* Los elementos hijos se alinearán en fila horizontal */
-    padding: 0;
-    margin: 0;
-    align-items: center; /* Alineación vertical de los elementos del menú */
+    flex-direction: column; /* Alineación vertical */
+    gap: 15px; /* Espaciado entre los elementos */
   }
-  
+
   .nav-item {
-    margin: 0 65px; /* Espacio horizontal entre los elementos */
+    margin: 10px 0; /* Espaciado vertical */
   }
-  
+
   .nav-link {
-    font-size: 18px;
-    color: #000;
-    text-decoration: none;
+    font-size: 16px; /* Tamaño de fuente más pequeño */
   }
-  
-  .nav-link:hover {
-    color: #007bff;
+
+  .navbar-menu {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    gap: 20px; /* Espaciado adicional */
   }
-  
-  /* Acciones del Navbar */
-  .navbar-actions {
-    display: flex;
-    align-items: center;
+}
+
+@media (max-width: 576px) {
+  .navbar-menu {
+    gap: 10px; /* Espacio adicional */
   }
-  
-  .navbar-search {
-    display: flex;
-    align-items: center;
+
+  .nav-item {
+    margin: 5px 0; /* Reduce el margen */
   }
-  
-  .search-input {
-    padding: 5px 10px;
-    font-size: 16px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    margin-right: 10px;
+
+  .nav-link {
+    font-size: 14px; /* Tamaño de fuente más pequeño */
   }
-  
-  .search-button {
-    padding: 5px 15px;
-    border: none;
-    background-color: #000;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  .search-button:hover {
-    background-color: #333;
-  }
-  
-  /* Botón de Carrito */
-  .carrito-boton {
-    background: none;
-    border: none;
-    position: relative;
-    font-size: 24px;
-    cursor: pointer;
-    margin-right: 1rem;
-  }
-  
-  .carrito-boton:hover .carrito-badge {
-    background-color: #ff4c4c;
-  }
-  
-  .carrito-badge {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    background-color: #dc3545;
-    color: #fff;
-    font-size: 12px;
-    padding: 3px 6px;
-    border-radius: 50%;
-  }
+}
