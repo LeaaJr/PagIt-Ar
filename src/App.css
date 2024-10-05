@@ -80,14 +80,73 @@
   font-size: calc(1.200rem + 3.5vw);
   font-weight: 700;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  max-width: 90%;
+  margin: 0 auto;
 }
+
+@media (min-width: 375px) {
+  .custom-display {
+    font-size: calc(0.8rem + 1vw);
+    /* Reducimos la altura para que no ocupe toda la pantalla */
+    height: auto;
+    min-height: 50vh;
+  }
+}
+
+@media (min-width: 425px) {
+  .custom-display {
+    font-size: calc(0.9rem + 1.2vw);
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-display {
+    font-size: calc(1.2rem + 3.5vw);
+    /* Volvemos a la altura completa para pantallas más grandes si lo deseas */
+    height: 100vh;
+  }
+}
+
 
 .custom-subtitle {
   font-weight: 400;
   color: #151616; 
   margin-bottom: 1rem;
   text-align: center;
+  /* Añadimos estas propiedades para centrar y ajustar el layout */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 20vh; /* Altura mínima para asegurar visibilidad */
+  max-width: 90%;
+  margin: 0 auto;
+  margin-top: -100px;
 }
+
+@media (min-width: 375px) {
+  .custom-subtitle {
+    font-size: calc(0.9rem + 0.8vw);
+  }
+}
+
+@media (min-width: 425px) {
+  .custom-subtitle {
+    font-size: calc(1rem + 1vw);
+  }
+}
+
+@media (min-width: 768px) {
+  .custom-subtitle {
+    font-size: calc(1.1rem + 1.2vw);
+    min-height: 25vh; /* Aumentamos un poco la altura mínima para pantallas más grandes */
+  }
+}
+
+
 
 /* MAIN */
 
@@ -110,25 +169,25 @@
 }
 
 .custom-inner-class {
-  color: #ffffff; /* Texto blanco */
+  color: #000000; /* Texto blanco */
   padding-top: 1rem; /* pt-3 */
   padding-left: 1rem; /* px-3 */
   padding-right: 1rem; /* px-3 */
   text-align: center; /* text-center */
   overflow: hidden; /* overflow-hidden */
-  background-image: url(../src/Img/mates-background.jpg);
+  background-color: #ffffff;
   background-size: cover;
   background-position: center;
 }
 
 .custom-inner-classtwo {
-  color: #ffffff; /* Texto blanco */
+  color: #000000; /* Texto blanco */
   padding-top: 1rem; /* pt-3 */
   padding-left: 1rem; /* px-3 */
   padding-right: 1rem; /* px-3 */
   text-align: center; /* text-center */
   overflow: hidden; /* overflow-hidden */
-  background-image: url(../src/Img/dulce-de-leche.jpg);
+  background-color: #ffffff;
   background-size: cover;
   background-position: center;
 }
@@ -143,13 +202,13 @@
 }
 
 .custom-inner-classthree {
-  color: #ffffff; /* Texto blanco */
+  color: #000000; /* Texto blanco */
   padding-top: 1rem; /* pt-3 */
   padding-left: 1rem; /* px-3 */
   padding-right: 1rem; /* px-3 */
   text-align: center; /* text-center */
   overflow: hidden; /* overflow-hidden */
-  background-image: url(../src/Img/alfajor-argentino-three.jpg);
+  background-color:#ffffff;
   background-size: cover;
   background-position: center;
 }
@@ -175,3 +234,34 @@
 }
 
 
+
+.product-section-container {
+  width: 80%;
+  height: 300px;
+  border-radius: 21px 21px 0 0;
+  background-color: var(--bs-tertiary-bg);
+  box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.mates {
+  background-image: url('../src/Img/mates-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.dulce {
+  background-image: url('../src/Img/dulce-de-leche.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.termo {
+  background-image: url('../src/Img/Termo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

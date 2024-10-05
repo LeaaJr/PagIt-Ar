@@ -11,8 +11,7 @@ function ProductSection() {
           </div>
           <Link to="/productos">
               <div 
-              className="bg-body-tertiary shadow-sm mx-auto"
-              style={{ width: "80%", height: "300px", borderRadius: "21px 21px 0 0" }}
+              className="product-section-container mates"
           ></div> 
           </Link>
 
@@ -25,8 +24,7 @@ function ProductSection() {
 
           <Link to="/productos">
               <div 
-              className="bg-body-tertiary shadow-sm mx-auto"
-              style={{ width: "80%", height: "300px", borderRadius: "21px 21px 0 0" }}
+              className="product-section-container dulce "
           ></div> 
           </Link>
 
@@ -39,8 +37,7 @@ function ProductSection() {
 
           <Link to="/productos">
               <div 
-              className="bg-body-tertiary shadow-sm mx-auto"
-              style={{ width: "80%", height: "300px", borderRadius: "21px 21px 0 0" }}
+              className="product-section-container termo"
           ></div> 
           </Link>
 
