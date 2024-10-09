@@ -77,8 +77,9 @@
 }
 
 .custom-display {
-  font-size: calc(1.200rem + 3.5vw);
+  font-size: calc(2rem + 3vw);
   font-weight: 700;
+  margin-bottom: 0.5rem; /* Reducimos el margen inferior del título */
   text-align: center;
   display: flex;
   justify-content: center;
@@ -113,6 +114,7 @@
 
 
 .custom-subtitle {
+  font-size: calc(1rem + 1vw);
   font-weight: 400;
   color: #151616; 
   margin-bottom: 1rem;
@@ -122,14 +124,14 @@
   justify-content: center;
   align-items: center;
   min-height: 20vh; /* Altura mínima para asegurar visibilidad */
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
-  margin-top: -100px;
+  line-height: 1.2; /* Ajustamos el interlineado */
 }
 
 @media (min-width: 375px) {
   .custom-subtitle {
-    font-size: calc(0.9rem + 0.8vw);
+    font-size: calc(0.8rem + 1vw);
   }
 }
 
@@ -149,6 +151,16 @@
 
 
 /* MAIN */
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
 
 .main-custom-class {
   width: 100%; /* w-100 */
@@ -264,4 +276,61 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.main-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+}
+
+.custom-display {
+  font-size: calc(2rem + 3vw);
+  font-weight: 700;
+  margin-bottom: 0.5rem; /* Reducimos el margen inferior del título */
+}
+
+.custom-subtitle {
+  font-size: calc(1rem + 1vw);
+  font-weight: 400;
+  color: #ffffff;
+  max-width: 80%;
+  margin: 0 auto;
+  line-height: 1.2;
+  margin-top:-21rem; /* Ajustamos el interlineado */
+}
+
+@media (max-width: 768px) {
+  .main-section {
+    padding: 1rem;
+  }
+
+  .custom-display {
+    font-size: calc(1.5rem + 3vw);
+    margin-bottom: 0.3rem; /* Reducimos aún más el margen en pantallas pequeñas */
+  }
+
+  .custom-subtitle {
+    font-size: calc(0.8rem + 1vw);
+  }
+}
+
+@media (max-width: 480px) {
+  .main-section {
+    justify-content: flex-start;
+    padding-top: 4rem;
+  }
+
+  .custom-display {
+    font-size: calc(1.2rem + 3vw);
+    margin-bottom: 0.2rem; /* Mínimo margen en pantallas muy pequeñas */
+  }
+
+  .custom-subtitle {
+    font-size: calc(0.7rem + 1vw);
+  }
 }

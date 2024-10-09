@@ -3,6 +3,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 import '../Estilos/Cards.css';
 
+
 const CardDeck = ({ agregarAlCarrito }) => {
   const [productos, setProductos] = useState([]);
   const [cantidad, setCantidad] = useState({});
@@ -113,7 +114,3 @@ const CardDeck = ({ agregarAlCarrito }) => {
 };
 
 export default CardDeck;
-
-
-
-
